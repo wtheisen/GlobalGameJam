@@ -7,7 +7,7 @@ A space themed RPG written in python
 
 ### Stat sheet API:
 
-######Characters:
+####Characters:
 | Key       | Potential Values                                           |
 |:---------:|:----------------------------------------------------------:|
 |type       | character                                                  |
@@ -20,7 +20,7 @@ A space themed RPG written in python
 | credits   | Amount of currency the player starts with                  |
 | items     | List of starting items                                     |
 
-######Items:
+####Items:
 | Key       | Potential Values                                           |
 |:---------:|:----------------------------------------------------------:|
 |type       | item                                                       |
@@ -34,7 +34,7 @@ A space themed RPG written in python
 | ammo      | Amount of starting ammo, -1 for infinite                   |
 | damage    | Damage dealt on hit, negative numbers will heal            |
 
-######Environment:
+####Environment:
 | Key       | Potential Values                                           |
 |:---------:|:----------------------------------------------------------:|
 |type       | environemt                                                 |
