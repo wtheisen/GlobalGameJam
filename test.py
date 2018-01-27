@@ -55,7 +55,7 @@ print(sys.modules.keys())
 
 rect = screen.get_rect()
 
-blonic  = modules["player"][0].playerblonicClass()
+blonic  = modules["player"][0].objectClass()
 
 
 
