@@ -27,11 +27,19 @@ def createClass(filePath, fileJSON):
         classFile.write(line)
         return
 
-    writeLine('class ' + fileJSON["subtype"] + '():\n')
+    writeLine('class ' + fileJSON["subtype"] + '(pygame.sprite.Sprite):\n')
     writeLine('\tdef __init__(self):\n')
+    writeLine('\t\tpygame.sprite.Sprite.__init__(self)\n') 
     writeLine('\t\tself.x = 0\n\t\tself.y=0\n')
     writeLine('\t\tself.image="' + fileJSON["imagePath"] + '"\n')
+    
+    writeLine('\t\tself.src_image=pygame.image.load(self.image)\n')
     writeLine('\t\tself.name="' + fileJSON['name'] + '"\n')
+    writeLine('\t\tself.position= (self.x, self.y)')
+    writeLine('\t\tprint("import Successful")\n') 
+ 
+
+
 
     if fileJSON["type"] == 'character':
         print("character type")
@@ -46,6 +54,8 @@ def createClass(filePath, fileJSON):
         writeLine('\tdef move(self, xDir, yDir):\n')
         writeLine('\t\tself.x += self.speed * xDir\n')
         writeLine('\t\tself.y += self.speed * yDir\n')
+        writeLine('\t\tself.position = (self.x, self.y)\n')
+        
         writeLine('\n')
         writeLine('\tdef useActiveItem(self):\n')
         writeLine('\t\tself.activeItem.use()\n')
@@ -80,7 +90,7 @@ def createClass(filePath, fileJSON):
         writeLine('\t\tself.activeItem.use()\n')
         writeLine('\n')
 
-    writeLine('\tdef draw(self):\n')
+    writeLine('\tdef drawGEN(self):\n')
     writeLine('\t\twindow.blit(self.image, (self.x, self.y))\n')
     writeLine('\n')
 

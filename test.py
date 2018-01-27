@@ -46,6 +46,11 @@ class PlayerSprite(pygame.sprite.Sprite):
 		self.rect=self.image.get_rect()
 		self.rect.center = self.position
 
+
+import sheetParser
+sheetParser.readSheets()
+
+ 
 rect = screen.get_rect()
 
 player = PlayerSprite('alien.png', rect.center)
