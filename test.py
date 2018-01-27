@@ -113,7 +113,9 @@ while 1:
         ##screen.blit(rotated ,(i, 100))
         #blonic_group.update(deltat)
         blonic_group.draw(screen)
-        enemy_group.draw(screen)
+        for obj in sceneObjects["enemy"]:
+            if obj.health > 0:
+                enemy_group.draw(screen)
 
         pygame.display.flip()
 
