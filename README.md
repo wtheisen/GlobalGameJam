@@ -50,3 +50,11 @@ A space themed RPG written in python
 | cover     | Whether or not the characters can use object as cover      |
 | health    | Amount of damage taken before object is destroyed          |
 
+## Saturday TODO:
+* Control Scheme
+* Object tracking
+* Object Interaction
+..**********Movement
+..*************Destruction
+..*************Collision
+
