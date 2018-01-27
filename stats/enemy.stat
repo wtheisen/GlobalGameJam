@@ -1,0 +1,12 @@
+{
+    "type"      : "character",
+    "subtype"   : "enemy",
+    "name"      : "ayyyy lmao",
+    "imagePath" : "./art/alien.png",
+    "objectID"  : "0",
+    "instanceID": "0",
+    "health"    : "1",
+    "speed"     : "2",
+    "credits"   : "25",
+    "items"     : []
+}

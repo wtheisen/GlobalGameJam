@@ -27,7 +27,7 @@ def createClass(filePath, fileJSON):
         classFile.write(line)
         return
 
-    writeLine('import pygame, math\n')
+    writeLine('import pygame, math, utils\n')
     writeLine('class  objectClass(pygame.sprite.Sprite):\n')
     writeLine('    @staticmethod\n')
     writeLine('    def getSubType():\n')
@@ -70,10 +70,10 @@ def createClass(filePath, fileJSON):
 
 
         writeLine('\n')
-        writeLine('    def useActiveItem(self):\n')
+        writeLine('    def useActiveItem(self, sceneObjects):\n')
         writeLine('        if self.activeItem == None:\n')
         writeLine('            return\n')
-        writeLine('        self.activeItem.use()\n')
+        writeLine('        self.activeItem.use(sceneObjects)\n')
         writeLine('\n')
 
         writeLine('    def faceMouse(self):\n')
@@ -92,11 +92,11 @@ def createClass(filePath, fileJSON):
         writeLine('        self.damage=' + fileJSON['damage'] + '\n')
         writeLine('        self.effects=' + fileJSON['effects'] + '\n')
         writeLine('\n')
-        writeLine('    def use(self):\n')
+        writeLine('    def use(self, sceneObjects):\n')
         writeLine('        print("used item")\n')
-        writeLine('        self.addEffect()\n')
+        writeLine('        self.addEffect(sceneObjects)\n')
         writeLine('\n')
-        writeLine('    def addEffect(self):\n')
+        writeLine('    def addEffect(self, sceneObjects):\n')
         writeLine('        print("drawing a light line")\n')
         writeLine('        mouseX, mouseY = pygame.mouse.get_pos()\n')
         writeLine('        self.x, self.y = self.position\n')
@@ -107,6 +107,7 @@ def createClass(filePath, fileJSON):
         writeLine('            mouseY +=deltaY\n')
         writeLine('            mouseX +=deltaX\n')
         writeLine('        pygame.draw.line(self.screen, (200,200,200), self.position, (mouseX,mouseY), 9)\n')
+        writeLine('        utils.checkCol(self.position.x, self.position.y, mouseX, mouseY, sceneObjects)\n')
 
     elif fileJSON["type"] == 'environment':
         print("environment type")

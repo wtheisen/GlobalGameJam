@@ -1,5 +1,6 @@
 import pygame,math,sys
 from pygame.locals import *
+from collections import defaultdict
 
 import utils
 
@@ -7,6 +8,7 @@ print("hello")
 
 utils.createClasses()
 modules = utils.importClasses()
+sceneObjects = defaultdict(list)
 
 screen = pygame.display.set_mode((1024, 768))
 
@@ -57,6 +59,12 @@ rect = screen.get_rect()
 
 blonic  = modules["player"][0].objectClass()
 gun = modules["weapon"][0].objectClass()
+enemy = modules["enemy"][0].objectClass()
+
+sceneObjects["player"].append(blonic)
+sceneObjects["weapon"].append(gun)
+sceneObjects["enemy"].append(enemy)
+
 gun.screen=screen
 blonic.activeItem=gun
 
@@ -84,7 +92,7 @@ while 1:
         for event in pygame.event.get():
 
                 if event.type == pygame.MOUSEBUTTONDOWN:
-                    blonic.useActiveItem()
+                    blonic.useActiveItem(sceneObjects)
 #                    pygame.draw.line(screen, (100,100,100), (100, 50), (100,100), 5)
 
                 if event.type == 12:
