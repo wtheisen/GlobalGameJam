@@ -1,12 +1,13 @@
-import pygame,math,sys , os
-import imp
+import pygame,math,sys
 from pygame.locals import *
 
-
-
-
+import utils
 
 print("hello")
+
+utils.createClasses()
+modules = utils.importClasses()
+
 screen = pygame.display.set_mode((1024, 768))
 
 
@@ -49,21 +50,6 @@ class PlayerSprite(pygame.sprite.Sprite):
                 self.rect.center = self.position
 
 
-import sheetParser
-sheetParser.readSheets()
-
-
-modules = {}
-
-classFolder = "./classes/"
-for filename in os.listdir(classFolder):
-        if filename.endswith('.py'):
-                pathname = os.path.join(classFolder, filename)
-                print (pathname)
-                print (filename)
-                #importlib.import_module(pathname.split(".")[0], package=filename.split(".")[0])
-                modules[filename.split(".")[0]]= imp.load_source(filename.split(".")[0], pathname)
-
 print ("current imports\n")
 print(sys.modules.keys())
 
@@ -89,7 +75,7 @@ while 1:
                 blonic.move(1,0)
         if keys[pygame.K_a]:
                 blonic.move(-1,0)
-        
+
 
         for event in pygame.event.get():
                 if event.type == KEYDOWN:
@@ -111,8 +97,8 @@ while 1:
         ##screen.blit(rotated ,(i, 100))
         #blonic_group.update(deltat)
         blonic_group.draw(screen)
-        
-            
+
+
         pygame.display.flip()
 
         pygame.event.pump()
