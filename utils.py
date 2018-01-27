@@ -1,4 +1,5 @@
 #utility functions for test.py
+from collections import defaultdict
 
 def createClasses():
     import sheetParser
@@ -7,10 +8,10 @@ def createClasses():
     return True
 
 def importClasses():
-    import os, imp
+    import os, imp 
 
     temp = {}
-    modules = {}
+    modules = defaultdict(list)
 
     classFolder = "./classes/"
     for filename in os.listdir(classFolder):

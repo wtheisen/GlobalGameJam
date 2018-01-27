@@ -55,7 +55,7 @@ print(sys.modules.keys())
 
 rect = screen.get_rect()
 
-blonic  = modules["playerblonicClass"].playerblonicClass()
+blonic  = modules["player"][0].playerblonicClass()
 
 
 
@@ -80,6 +80,9 @@ while 1:
         blonic.faceMouse()
 
         for event in pygame.event.get():
+
+#                if event.type == pygame.MOUSE_DOWN:
+#                    print ("done")
 
 
                 if event.type == 12:
