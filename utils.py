@@ -27,25 +27,38 @@ def importClasses():
     return modules
 
 def checkPointCol(x, y, sceneObjects):
+    #return False
+    print ("checking stuff")
+    print (sceneObjects)
     for key, val in sceneObjects.items():
         for obj in val:
+            print (obj)
             if obj.rect.collidepoint(x, y):
                 if key == 'enemy':
                     obj.health -= 1
                     print ("hit enemy")
                     return True
-            else:
-                return True
+                else:
+                    return True
 
     return False
 
 def checkCol(startX, startY, endX, endY, sceneObjects):
     #figure out the line equation here
-    m = (endY - startY) / (float)(endX - startX)
-    b = startY - m * startX
+    print ("checking col")
+    deltaY = float(endY - startY)
+    deltaX = float(endX - startX)
+    interval = 5
+    x=float(startX)
+    y=float(startY)
+    #m = (endY - startY) / (float)(endX - startX)
+    #b = startY - m * startX
 
-    for x in range(startX, endX, 5):
-        y = m * x + b
+    for i in range(0, interval):
+        x+=(deltaX/interval)
+        y+=(deltaY/interval)    
+        #y = m * x + b
+        print(x)
         if checkPointCol(x, y, sceneObjects):
             return
 
