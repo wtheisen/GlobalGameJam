@@ -28,7 +28,7 @@ def createClass(filePath, fileJSON):
         return
 
     writeLine('import pygame, math\n')
-    writeLine('class ' + fileJSON["subtype"] + fileJSON["name"]+ 'Class(pygame.sprite.Sprite):\n')
+    writeLine('class  objectClass(pygame.sprite.Sprite):\n')
     writeLine('    @staticmethod\n')
     writeLine('    def getSubType():\n')
     writeLine('        return ' +fileJSON["subtype"]+'\n')
