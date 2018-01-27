@@ -27,6 +27,7 @@ def createClass(filePath, fileJSON):
         classFile.write(line)
         return
 
+    writeLine('import pygame\n')
     writeLine('class ' + fileJSON["subtype"] + fileJSON["name"]+ 'Class(pygame.sprite.Sprite):\n')
     writeLine('\tdef __init__(self):\n')
     writeLine('\t\tpygame.sprite.Sprite.__init__(self)\n')
@@ -35,7 +36,7 @@ def createClass(filePath, fileJSON):
 
     writeLine('\t\tself.src_image=pygame.image.load(self.image)\n')
     writeLine('\t\tself.name="' + fileJSON['name'] + '"\n')
-    writeLine('\t\tself.position= (self.x, self.y)')
+    writeLine('\t\tself.position= (self.x, self.y)\n')
     writeLine('\t\tprint("import Successful")\n')
 
 

@@ -1,5 +1,5 @@
 import pygame,math,sys , os
-import importlib
+import imp
 from pygame.locals import *
 
 
@@ -54,8 +54,11 @@ sheetParser.readSheets()
 classFolder = "./classes/"
 for filename in os.listdir(classFolder):
         if filename.endswith('.py'):
-                importlib.import_module(os.path.join(classFolder, filename), package=filename)
-
+                pathname = os.path.join(classFolder, filename)
+                print (pathname)
+                print (filename)
+                #importlib.import_module(pathname.split(".")[0], package=filename.split(".")[0])
+                imp.load_source(filename.split(".")[0], pathname)
 rect = screen.get_rect()
 
 player = PlayerSprite('alien.png', rect.center)

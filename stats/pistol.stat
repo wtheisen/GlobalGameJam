@@ -1,7 +1,7 @@
 {
     "type"         : "item",
     "subtype"      : "weapon",
-    "name"         : "Basic Laser Pistol",
+    "name"         : "BasicLaserPistol",
     "imagePath"    : "./art/meow.png",
     "weaponType"   : "ranged",
     "effects"      : "[]",
