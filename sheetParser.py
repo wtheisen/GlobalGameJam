@@ -69,6 +69,8 @@ def createClass(filePath, fileJSON):
 
         writeLine('\n')
         writeLine('    def useActiveItem(self):\n')
+        writeLine('        if self.activeItem == None:\n')
+        writeLine('            return\n')
         writeLine('        self.activeItem.use()\n')
         writeLine('\n')
 
