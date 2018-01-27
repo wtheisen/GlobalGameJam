@@ -34,7 +34,7 @@ def createClass(filePath, fileJSON):
     writeLine('        return ' +fileJSON["subtype"]+'\n')
     writeLine('    def __init__(self):\n')
     writeLine('        pygame.sprite.Sprite.__init__(self)\n')
-    writeLine('        self.x = 0\n        self.y=0\n')
+    writeLine('        self.x = 100\n        self.y=100\n')
     writeLine('        self.imagePath="' + fileJSON["imagePath"] + '"\n')
 
     writeLine('        self.src_image=pygame.image.load(self.imagePath)\n')
@@ -46,7 +46,7 @@ def createClass(filePath, fileJSON):
     writeLine('        self.rect=self.src_image.get_rect()\n')
     writeLine('        self.objectID=' + fileJSON['objectID'] + '\n')
     writeLine('        self.instanceID=' + fileJSON['instanceID'] + '\n')
-
+    writeLine('        self.screen=None\n')
 
 
 
@@ -65,6 +65,8 @@ def createClass(filePath, fileJSON):
         writeLine('        self.y += self.speed * yDir\n')
         writeLine('        self.position = (self.x, self.y)\n')
         writeLine('        self.rect.center = self.position\n')
+        writeLine('        if self.activeItem != None:\n')
+        writeLine('            self.activeItem.position = self.position\n')
 
 
         writeLine('\n')
@@ -92,9 +94,20 @@ def createClass(filePath, fileJSON):
         writeLine('\n')
         writeLine('    def use(self):\n')
         writeLine('        print("used item")\n')
+        writeLine('        self.addEffect()\n')
         writeLine('\n')
         writeLine('    def addEffect(self):\n')
-        writeLine('        print("used item")\n')
+        writeLine('        print("drawing a light line")\n')
+        writeLine('        mouseX, mouseY = pygame.mouse.get_pos()\n')
+        writeLine('        self.x, self.y = self.position\n')
+        writeLine('        deltaX = mouseX -self.x\n')
+        writeLine('        deltaY = mouseY -self.y\n')
+        writeLine('        screenY = self.screen.get_height()\n')
+        writeLine('        while (mouseY < screenY) and (mouseY > 0):\n')
+        writeLine('            mouseY +=deltaY\n')
+        writeLine('            mouseX +=deltaX\n')
+        writeLine('        pygame.draw.line(self.screen, (200,200,200), self.position, (mouseX,mouseY), 9)\n')
+
     elif fileJSON["type"] == 'environment':
         print("environment type")
         writeLine('        self.destructable=' + fileJSON['destructable'] + '\n')

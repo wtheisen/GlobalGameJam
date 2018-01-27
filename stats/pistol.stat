@@ -2,7 +2,7 @@
     "type"         : "item",
     "subtype"      : "weapon",
     "name"         : "BasicLaserPistol",
-    "imagePath"    : "./art/meow.png",
+    "imagePath"    : "./art/alien.png",
     "objectID"     : "0",
     "instanceID"   : "0",
     "weaponType"   : "ranged",

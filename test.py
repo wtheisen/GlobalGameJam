@@ -57,6 +57,7 @@ rect = screen.get_rect()
 
 blonic  = modules["player"][0].objectClass()
 gun = modules["weapon"][0].objectClass()
+gun.screen=screen
 blonic.activeItem=gun
 
 
@@ -65,6 +66,7 @@ blonic_group = pygame.sprite.RenderPlain(blonic)
 
 while 1:
         #aksjfl;aksjd
+        screen.fill((0,0,0))
         clock.tick(FRAMES_PER_SECOND)
         keys = pygame.key.get_pressed()
         mouse = pygame.mouse.get_pos()
@@ -83,7 +85,7 @@ while 1:
 
                 if event.type == pygame.MOUSEBUTTONDOWN:
                     blonic.useActiveItem()
-
+#                    pygame.draw.line(screen, (100,100,100), (100, 50), (100,100), 5)
 
                 if event.type == 12:
                         sys.exit(0)
@@ -91,7 +93,7 @@ while 1:
                 print (event)
 
 
-        screen.fill((0,0,0))
+#        screen.fill((0,0,0))
 
         i+=1
         x=0
