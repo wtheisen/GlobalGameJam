@@ -1,4 +1,5 @@
-import pygame,math,sys
+import pygame,math,sys , os
+import importlib
 from pygame.locals import *
 
 
@@ -50,6 +51,10 @@ class PlayerSprite(pygame.sprite.Sprite):
 import sheetParser
 sheetParser.readSheets()
 
+classFolder = "./classes/"
+for filename in os.listdir(classFolder):
+	if filename.endswith('.py'):
+		importlib.import_module(os.path.join(classFolder, filename))
  
 rect = screen.get_rect()
 
