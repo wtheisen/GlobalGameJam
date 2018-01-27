@@ -5,13 +5,19 @@
 !_TAG_PROGRAM_NAME	Universal Ctags	/Derived from Exuberant Ctags/
 !_TAG_PROGRAM_URL	https://ctags.io/	/official site/
 !_TAG_PROGRAM_VERSION	0.0.0	/b6031a8d/
-Meow	playerClass.py	/^	def Meow():$/;"	m	class:player
-__init__	characterClass.py	/^	def __init__(self):$/;"	m	class:character
-__init__	itemClass.py	/^	def __init__(self):$/;"	m	class:item
-character	characterClass.py	/^class character():$/;"	c
+__init__	itemClass.py	/^	def __init__(self):$/;"	m	class:weapon
+__init__	playerClass.py	/^	def __init__(self):$/;"	m	class:player
+__init__	weaponClass.py	/^	def __init__(self):$/;"	m	class:weapon
 createClass	sheetParser.py	/^def createClass(filePath, fileJSON):$/;"	f
-item	itemClass.py	/^class item():$/;"	c
-player	playerClass.py	/^class player$/;"	c
+draw	itemClass.py	/^	def draw(self):$/;"	m	class:weapon
+draw	playerClass.py	/^	def draw(self):$/;"	m	class:player
+draw	weaponClass.py	/^	def draw(self):$/;"	m	class:weapon
+equipItem	playerClass.py	/^	def equipItem(self, item):$/;"	m	class:player
+move	playerClass.py	/^	def move(self, xDir, yDir):$/;"	m	class:player
+player	playerClass.py	/^class player():$/;"	c
 readSheets	sheetParser.py	/^def readSheets():$/;"	f
 statsFolder	sheetParser.py	/^statsFolder = '.\/stats\/'$/;"	v
+useActiveItem	playerClass.py	/^	def useActiveItem(self):$/;"	m	class:player
+weapon	itemClass.py	/^class weapon():$/;"	c
+weapon	weaponClass.py	/^class weapon():$/;"	c
 writeLine	sheetParser.py	/^    def writeLine(line):$/;"	f	function:createClass	file:

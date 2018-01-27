@@ -1,0 +1,9 @@
+{
+    "type"         : "environment",
+    "subtype"      : "wall",
+    "name"         : "wall",
+    "imagePath"    : "./art/wall.png",
+    "destructable" : "true",
+    "items"     : ["credits"],
+    "cover"        : "1"
+}
