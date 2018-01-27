@@ -3,6 +3,8 @@
     "subtype"      : "weapon",
     "name"         : "BasicLaserPistol",
     "imagePath"    : "./art/meow.png",
+    "objectID"     : "0",
+    "instanceID"   : "0",
     "weaponType"   : "ranged",
     "effects"      : "[]",
     "consumable"   : "0",
