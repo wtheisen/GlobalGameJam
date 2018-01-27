@@ -81,8 +81,8 @@ while 1:
 
         for event in pygame.event.get():
 
-#                if event.type == pygame.MOUSE_DOWN:
-#                    print ("done")
+                if event.type == pygame.MOUSEBUTTONDOWN:
+                    print ("done")
 
 
                 if event.type == 12:
