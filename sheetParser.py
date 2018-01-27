@@ -38,17 +38,19 @@ def createClass(filePath, fileJSON):
     writeLine('        self.name="' + fileJSON['name'] + '"\n')
     writeLine('        self.position= (self.x, self.y)\n')
     writeLine('        print("import Successful")\n')
-    
+
     writeLine('        self.image=self.src_image\n')
     writeLine('        self.rect=self.src_image.get_rect()\n')
+    writeLine('        self.objectID=' + fileJSON['objectID'] + '\n')
+    writeLine('        self.instanceID=' + fileJSON['instanceID'] + '\n')
 
 
 
 
     if fileJSON["type"] == 'character':
         print("character type")
-        writeLine('        self.health="' + fileJSON['health'] + '"\n')
-        writeLine('        self.speed="' + fileJSON['speed'] + '"\n')
+        writeLine('        self.health=' + fileJSON['health'] + '\n')
+        writeLine('        self.speed=' + fileJSON['speed'] + '\n')
         writeLine('        self.activeItem=None\n')
         writeLine('        self.items=[' + ', '.join(fileJSON['items']) + ']\n')
         writeLine('\n')
@@ -67,9 +69,9 @@ def createClass(filePath, fileJSON):
     elif fileJSON["type"] == 'item':
         print("item type")
         writeLine('        self.weaponType="' + fileJSON['weaponType'] + '"\n')
-        writeLine('        self.consumable="' + fileJSON['consumable'] + '"\n')
-        writeLine('        self.ammo="' + fileJSON['ammo'] + '"\n')
-        writeLine('        self.damage="' + fileJSON['damage'] + '"\n')
+        writeLine('        self.consumable=' + fileJSON['consumable'] + '\n')
+        writeLine('        self.ammo=' + fileJSON['ammo'] + '\n')
+        writeLine('        self.damage=' + fileJSON['damage'] + '\n')
         writeLine('        self.effects=' + fileJSON['effects'] + '\n')
         writeLine('\n')
         writeLine('    def use(self):\n')
@@ -79,10 +81,10 @@ def createClass(filePath, fileJSON):
         writeLine('        print("used item")\n')
     elif fileJSON["type"] == 'environment':
         print("environment type")
-        writeLine('        self.destructable="' + fileJSON['destructable'] + '"\n')
+        writeLine('        self.destructable=' + fileJSON['destructable'] + '\n')
         writeLine('        self.items=[' + ', '.join(fileJSON['items']) + ']\n')
         writeLine('        self.cover=' + fileJSON['cover'] + '\n')
-        writeLine('        self.health="' + fileJSON['health'] + '"\n')
+        writeLine('        self.health=' + fileJSON['health'] + '\n')
         writeLine('\n')
         writeLine('    def equipItem(self, item):\n')
         writeLine('        self.items.append(item)\n')

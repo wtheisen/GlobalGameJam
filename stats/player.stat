@@ -3,6 +3,8 @@
     "subtype"   : "player",
     "name"      : "blonic",
     "imagePath" : "./art/alien.png",
+    "objectID"  : "0",
+    "instanceID": "0",
     "health"    : "10",
     "speed"     : "2",
     "credits"   : "25",

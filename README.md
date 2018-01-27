@@ -5,9 +5,9 @@ Our submission for the global game jam (2018)
 A space themed RPG written in python
 
 
-### Stat sheet API:
+## Stat sheet API:
 
-####Characters:
+#### Characters:
 
 | Key       | Potential Values                                           |
 |:---------:|:----------------------------------------------------------:|
@@ -21,7 +21,7 @@ A space themed RPG written in python
 | credits   | Amount of currency the player starts with                  |
 | items     | List of starting items                                     |
 
-#####Items:
+#### Items:
 
 | Key       | Potential Values                                           |
 |:---------:|:----------------------------------------------------------:|
@@ -36,11 +36,11 @@ A space themed RPG written in python
 | ammo      | Amount of starting ammo, -1 for infinite                   |
 | damage    | Damage dealt on hit, negative numbers will heal            |
 
-####Environment:
+### Environment:
 
 | Key       | Potential Values                                           |
 |:---------:|:----------------------------------------------------------:|
-|type       | environemt                                                 |
+|type       | environment                                                 |
 |subtype    | really just anything here                                  |
 | name      | Whatever you want                                          |
 | objectID  | Assigned at runtime                                        |
@@ -49,4 +49,12 @@ A space themed RPG written in python
 | items     | Items available after the object is destroyed              |
 | cover     | Whether or not the characters can use object as cover      |
 | health    | Amount of damage taken before object is destroyed          |
+
+## Saturday TODO:
+* Control Scheme
+* Object tracking
+* Object Interaction
+..**********Movement
+..*************Destruction
+..*************Collision
 
