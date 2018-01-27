@@ -4,6 +4,6 @@
     "name"         : "wall",
     "imagePath"    : "./art/wall.png",
     "destructable" : "true",
-    "items"     : ["credits"],
+    "items"        : ["credits"],
     "cover"        : "1"
 }

@@ -5,19 +5,41 @@
 !_TAG_PROGRAM_NAME	Universal Ctags	/Derived from Exuberant Ctags/
 !_TAG_PROGRAM_URL	https://ctags.io/	/official site/
 !_TAG_PROGRAM_VERSION	0.0.0	/b6031a8d/
+Enemy	deathstar.py	/^class Enemy(pygame.sprite.Sprite):$/;"	c
+GameSpace	deathstar.py	/^class GameSpace:$/;"	c
+Player	deathstar.py	/^class Player(pygame.sprite.Sprite):$/;"	c
+__init__	classes/playerblonicClass.py	/^	def __init__(self):$/;"	m	class:player
+__init__	classes/wallwallClass.py	/^	def __init__(self):$/;"	m	class:wall
+__init__	classes/weaponBasic Laser PistolClass.py	/^	def __init__(self):$/;"	m	class:weapon
+__init__	deathstar.py	/^    def __init__(self):$/;"	m	class:Enemy
+__init__	deathstar.py	/^    def __init__(self):$/;"	m	class:Player
 __init__	itemClass.py	/^	def __init__(self):$/;"	m	class:weapon
-__init__	playerClass.py	/^	def __init__(self):$/;"	m	class:player
-__init__	weaponClass.py	/^	def __init__(self):$/;"	m	class:weapon
+addEffect	classes/weaponBasic Laser PistolClass.py	/^	def addEffect(self):$/;"	m	class:weapon
 createClass	sheetParser.py	/^def createClass(filePath, fileJSON):$/;"	f
+createLaser	deathstar.py	/^    def createLaser(self, startX, startY):$/;"	m	class:Player
+draw	classes/playerblonicClass.py	/^	def draw(self):$/;"	m	class:player
+draw	classes/wallwallClass.py	/^	def draw(self):$/;"	m	class:wall
+draw	classes/weaponBasic Laser PistolClass.py	/^	def draw(self):$/;"	m	class:weapon
 draw	itemClass.py	/^	def draw(self):$/;"	m	class:weapon
-draw	playerClass.py	/^	def draw(self):$/;"	m	class:player
-draw	weaponClass.py	/^	def draw(self):$/;"	m	class:weapon
-equipItem	playerClass.py	/^	def equipItem(self, item):$/;"	m	class:player
-move	playerClass.py	/^	def move(self, xDir, yDir):$/;"	m	class:player
-player	playerClass.py	/^class player():$/;"	c
+equipItem	classes/playerblonicClass.py	/^	def equipItem(self, item):$/;"	m	class:player
+equipItem	classes/wallwallClass.py	/^	def equipItem(self, item):$/;"	m	class:wall
+faceMouse	deathstar.py	/^    def faceMouse(self):$/;"	m	class:Player
+gs	deathstar.py	/^    gs = GameSpace()$/;"	v
+load_image	deathstar.py	/^    def load_image(name):$/;"	m	class:GameSpace
+load_image	deathstar.py	/^def load_image(name):$/;"	f
+main	deathstar.py	/^    def main(self):$/;"	m	class:GameSpace
+move	classes/playerblonicClass.py	/^	def move(self, xDir, yDir):$/;"	m	class:player
+move	classes/wallwallClass.py	/^	def move(self, xDir, yDir):$/;"	m	class:wall
+move	deathstar.py	/^    def move(self, k):$/;"	m	class:Player
+player	classes/playerblonicClass.py	/^class player():$/;"	c
 readSheets	sheetParser.py	/^def readSheets():$/;"	f
 statsFolder	sheetParser.py	/^statsFolder = '.\/stats\/'$/;"	v
-useActiveItem	playerClass.py	/^	def useActiveItem(self):$/;"	m	class:player
+tick	deathstar.py	/^    def tick(self):$/;"	m	class:Enemy
+tick	deathstar.py	/^    def tick(self):$/;"	m	class:Player
+use	classes/weaponBasic Laser PistolClass.py	/^	def use(self):$/;"	m	class:weapon
+useActiveItem	classes/playerblonicClass.py	/^	def useActiveItem(self):$/;"	m	class:player
+useActiveItem	classes/wallwallClass.py	/^	def useActiveItem(self):$/;"	m	class:wall
+wall	classes/wallwallClass.py	/^class wall():$/;"	c
+weapon	classes/weaponBasic Laser PistolClass.py	/^class weapon():$/;"	c
 weapon	itemClass.py	/^class weapon():$/;"	c
-weapon	weaponClass.py	/^class weapon():$/;"	c
 writeLine	sheetParser.py	/^    def writeLine(line):$/;"	f	function:createClass	file:

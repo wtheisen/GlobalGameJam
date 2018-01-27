@@ -6,5 +6,5 @@
     "health"    : "10",
     "speed"     : "2",
     "credits"   : "25",
-    "equipment" : ["fists", "pants", "shirt", "laser pistol"]
+    "items"     : ["fists", "pants", "shirt", "laserPistol"]
 }
