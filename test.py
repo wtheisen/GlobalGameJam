@@ -26,6 +26,7 @@ TURN_SPEED = 5
 i=0
 
 
+
 class PlayerSprite(pygame.sprite.Sprite):
         MAX_FORWARD_SPEED = 10
         MAX_REVERSE_SPEED = 10
@@ -51,6 +52,9 @@ class PlayerSprite(pygame.sprite.Sprite):
 import sheetParser
 sheetParser.readSheets()
 
+
+modules = {}
+
 classFolder = "./classes/"
 for filename in os.listdir(classFolder):
         if filename.endswith('.py'):
@@ -58,11 +62,19 @@ for filename in os.listdir(classFolder):
                 print (pathname)
                 print (filename)
                 #importlib.import_module(pathname.split(".")[0], package=filename.split(".")[0])
-                imp.load_source(filename.split(".")[0], pathname)
+                modules[filename.split(".")[0]]= imp.load_source(filename.split(".")[0], pathname)
+
+print ("current imports\n")
+print(sys.modules.keys())
+
 rect = screen.get_rect()
 
-player = PlayerSprite('alien.png', rect.center)
-player_group = pygame.sprite.RenderPlain(player)
+blonic  = modules["playerblonicClass"].playerblonicClass()
+
+
+
+
+blonic_group = pygame.sprite.RenderPlain(blonic)
 
 
 while 1:
@@ -89,8 +101,8 @@ while 1:
         y=0
         ##rotated = pygame.transform.rotate(alien, 45* math.pi / 180)
         ##screen.blit(rotated ,(i, 100))
-        player_group.update(deltat)
-        player_group.draw(screen)
+        #blonic_group.update(deltat)
+        blonic_group.draw(screen)
 
         pygame.display.flip()
 

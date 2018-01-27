@@ -32,12 +32,15 @@ def createClass(filePath, fileJSON):
     writeLine('    def __init__(self):\n')
     writeLine('        pygame.sprite.Sprite.__init__(self)\n')
     writeLine('        self.x = 0\n        self.y=0\n')
-    writeLine('        self.image="' + fileJSON["imagePath"] + '"\n')
+    writeLine('        self.imagePath="' + fileJSON["imagePath"] + '"\n')
 
-    writeLine('        self.src_image=pygame.image.load(self.image)\n')
+    writeLine('        self.src_image=pygame.image.load(self.imagePath)\n')
     writeLine('        self.name="' + fileJSON['name'] + '"\n')
     writeLine('        self.position= (self.x, self.y)\n')
     writeLine('        print("import Successful")\n')
+    
+    writeLine('        self.image=self.src_image\n')
+    writeLine('        self.rect=self.src_image.get_rect()\n')
 
 
 
