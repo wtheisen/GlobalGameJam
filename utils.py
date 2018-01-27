@@ -32,6 +32,7 @@ def checkPointCol(x, y, sceneObjects):
             if obj.rect.collidepoint(x, y):
                 if key == 'enemy':
                     obj.health -= 1
+                    print ("hit enemy")
                     return True
             else:
                 return True

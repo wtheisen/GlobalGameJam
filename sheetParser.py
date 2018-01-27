@@ -107,7 +107,7 @@ def createClass(filePath, fileJSON):
         writeLine('            mouseY +=deltaY\n')
         writeLine('            mouseX +=deltaX\n')
         writeLine('        pygame.draw.line(self.screen, (200,200,200), self.position, (mouseX,mouseY), 9)\n')
-        writeLine('        utils.checkCol(self.position.x, self.position.y, mouseX, mouseY, sceneObjects)\n')
+        writeLine('        utils.checkCol(self.x, self.y, mouseX, mouseY, sceneObjects)\n')
 
     elif fileJSON["type"] == 'environment':
         print("environment type")
