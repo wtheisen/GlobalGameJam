@@ -81,6 +81,7 @@ while 1:
         #aksjfl;aksjd
         clock.tick(FRAMES_PER_SECOND)
         keys = pygame.key.get_pressed()
+        mouse = pygame.mouse.get_pos()
         if keys[pygame.K_w]:
                 blonic.move(0,-1)
         if keys[pygame.K_s]:
@@ -90,18 +91,25 @@ while 1:
         if keys[pygame.K_a]:
                 blonic.move(-1,0)
         
+        #mousex, mousey = mouse
+
+        #blonicx, blonicy = blonic.position
+
+        #deltaX = mousex - blonicx
+        #deltaY = mousey - blonicy
+        #ang = math.tan(float(deltaY)/float(deltaX))
+
+        blonic.faceMouse()
 
         for event in pygame.event.get():
-                if event.type == KEYDOWN:
-                        if event.key == K_w:
-                                blonic.move(0,-1)
-                                print ("blonic")
 
 
                 if event.type == 12:
                         sys.exit(0)
 
                 print (event)
+
+
         screen.fill((0,0,0))
 
         i+=1

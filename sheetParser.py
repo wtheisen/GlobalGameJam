@@ -27,7 +27,7 @@ def createClass(filePath, fileJSON):
         classFile.write(line)
         return
 
-    writeLine('import pygame\n')
+    writeLine('import pygame, math\n')
     writeLine('class ' + fileJSON["subtype"] + fileJSON["name"]+ 'Class(pygame.sprite.Sprite):\n')
     writeLine('    def __init__(self):\n')
     writeLine('        pygame.sprite.Sprite.__init__(self)\n')
@@ -68,6 +68,15 @@ def createClass(filePath, fileJSON):
         writeLine('    def useActiveItem(self):\n')
         writeLine('        self.activeItem.use()\n')
         writeLine('\n')
+
+        writeLine('    def faceMouse(self):\n')
+        writeLine('        mouseX, mouseY = pygame.mouse.get_pos()\n')
+        writeLine('        rotAngle = math.atan2(self.y - mouseY, mouseX - self.x)\n')
+        writeLine('        rotAngle = math.degrees(rotAngle)\n')
+        writeLine('        self.image = pygame.transform.rotate(self.src_image, rotAngle)\n')
+
+
+
     elif fileJSON["type"] == 'item':
         print("item type")
         writeLine('        self.weaponType="' + fileJSON['weaponType'] + '"\n')
