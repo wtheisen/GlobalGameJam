@@ -1,0 +1,17 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_OUTPUT_MODE	u-ctags	/u-ctags or e-ctags/
+!_TAG_PROGRAM_AUTHOR	Universal Ctags Team	//
+!_TAG_PROGRAM_NAME	Universal Ctags	/Derived from Exuberant Ctags/
+!_TAG_PROGRAM_URL	https://ctags.io/	/official site/
+!_TAG_PROGRAM_VERSION	0.0.0	/b6031a8d/
+Meow	playerClass.py	/^	def Meow():$/;"	m	class:player
+__init__	characterClass.py	/^	def __init__(self):$/;"	m	class:character
+__init__	itemClass.py	/^	def __init__(self):$/;"	m	class:item
+character	characterClass.py	/^class character():$/;"	c
+createClass	sheetParser.py	/^def createClass(filePath, fileJSON):$/;"	f
+item	itemClass.py	/^class item():$/;"	c
+player	playerClass.py	/^class player$/;"	c
+readSheets	sheetParser.py	/^def readSheets():$/;"	f
+statsFolder	sheetParser.py	/^statsFolder = '.\/stats\/'$/;"	v
+writeLine	sheetParser.py	/^    def writeLine(line):$/;"	f	function:createClass	file:
