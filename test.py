@@ -10,7 +10,7 @@ print("hello")
 screen = pygame.display.set_mode((1024, 768))
 
 
-alien = pygame.image.load('alien.png')
+#alien = pygame.image.load('alien.png')
 #
 clock = pygame.time.Clock()
 FRAMES_PER_SECOND = 60
@@ -80,11 +80,22 @@ blonic_group = pygame.sprite.RenderPlain(blonic)
 while 1:
         #aksjfl;aksjd
         clock.tick(FRAMES_PER_SECOND)
+        keys = pygame.key.get_pressed()
+        if keys[pygame.K_w]:
+                blonic.move(0,-1)
+        if keys[pygame.K_s]:
+                blonic.move(0,1)
+        if keys[pygame.K_d]:
+                blonic.move(1,0)
+        if keys[pygame.K_a]:
+                blonic.move(-1,0)
+        
+
         for event in pygame.event.get():
                 if event.type == KEYDOWN:
                         if event.key == K_w:
-                                player.position = (0,0)
-                                ## move character
+                                blonic.move(0,-1)
+                                print ("blonic")
 
 
                 if event.type == 12:
@@ -103,7 +114,9 @@ while 1:
         ##screen.blit(rotated ,(i, 100))
         #blonic_group.update(deltat)
         blonic_group.draw(screen)
-
+        
+        print(blonic.position)
+            
         pygame.display.flip()
 
         pygame.event.pump()
