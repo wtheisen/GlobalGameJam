@@ -8,7 +8,7 @@ def createClasses():
     return True
 
 def importClasses():
-    import os, imp 
+    import os, imp
 
     temp = {}
     modules = defaultdict(list)
@@ -26,4 +26,25 @@ def importClasses():
 
     return modules
 
+def checkPointCol(x, y, sceneObjects):
+    for key, val in sceneObjects.items():
+        for obj in val:
+            if obj.rect.collidepoint(x, y):
+                if key == 'enemy':
+                    obj.health -= 1
+                    return True
+            else:
+                return True
+
+    return False
+
+def checkCol(startX, startY, endX, endY, sceneObjects):
+    #figure out the line equation here
+    m = (endY - startY) / (float)(endX - startX)
+    b = startY - m * startX
+
+    for x in range(startX, endX, 5):
+        y = m * x + b
+        if checkPointCol(x, y, sceneObjects):
+            return
 
