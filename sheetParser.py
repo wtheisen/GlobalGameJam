@@ -68,6 +68,7 @@ def createClass(filePath, fileJSON):
         writeLine('\t\tself.destructable="' + fileJSON['destructable'] + '"\n')
         writeLine('\t\tself.items=[' + ', '.join(fileJSON['items']) + ']\n')
         writeLine('\t\tself.cover=' + fileJSON['cover'] + '\n')
+        writeLine('\t\tself.health="' + fileJSON['health'] + '"\n')
         writeLine('\n')
         writeLine('\tdef equipItem(self, item):\n')
         writeLine('\t\tself.items.append(item)\n')
