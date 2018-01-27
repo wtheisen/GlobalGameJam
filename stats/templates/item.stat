@@ -1,0 +1,12 @@
+{
+    "type"         : "item",
+    "subtype"      : "",
+    "name"         : "",
+    "objectID"     : "0",
+    "imagePath"    : "./art/",
+    "weaponType"   : "",
+    "effects"      : "[]",
+    "consumable"   : "",
+    "ammo"         : "",
+    "damage"       : ""
+}

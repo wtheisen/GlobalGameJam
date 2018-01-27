@@ -1,0 +1,11 @@
+{
+    "type"         : "environment",
+    "subtype"      : "crate",
+    "name"         : "coverCrate",
+    "objectID"     : "0",
+    "imagePath"    : "./art/crate.png",
+    "destructable" : "true",
+    "items"        : ["credits"],
+    "cover"        : "1",
+    "health"       : "10"
+}
