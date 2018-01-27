@@ -27,7 +27,7 @@ def createClass(filePath, fileJSON):
         classFile.write(line)
         return
 
-    writeLine('class ' + fileJSON["subtype"] + fileJSON["name"] + '(pygame.sprite.Sprite):\n')
+    writeLine('class ' + fileJSON["subtype"] + fileJSON["name"]+ 'Class(pygame.sprite.Sprite):\n')
     writeLine('\tdef __init__(self):\n')
     writeLine('\t\tpygame.sprite.Sprite.__init__(self)\n')
     writeLine('\t\tself.x = 0\n\t\tself.y=0\n')
