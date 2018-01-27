@@ -21,7 +21,7 @@ def createClass(filePath, fileJSON):
     print("File Contents:")
 
     classFileName = fileJSON["subtype"] + fileJSON["name"] + 'Class.py'
-    classFile = open(classFileName, 'w')
+    classFile = open('./classes/' + classFileName, 'w')
 
     def writeLine(line):
         classFile.write(line)
@@ -38,7 +38,7 @@ def createClass(filePath, fileJSON):
         writeLine('\t\tself.health="' + fileJSON['health'] + '"\n')
         writeLine('\t\tself.speed="' + fileJSON['speed'] + '"\n')
         writeLine('\t\tself.activeItem=None\n')
-        writeLine('\t\tself.items=[]\n')
+        writeLine('\t\tself.items=[' + ', '.join(fileJSON['items']) + ']\n')
         writeLine('\n')
         writeLine('\tdef equipItem(self, item):\n')
         writeLine('\t\tself.items.append(item)\n')
@@ -52,10 +52,21 @@ def createClass(filePath, fileJSON):
         writeLine('\n')
     elif fileJSON["type"] == 'item':
         print("item type")
+        writeLine('\t\tself.weaponType="' + fileJSON['weaponType'] + '"\n')
+        writeLine('\t\tself.consumable="' + fileJSON['consumable'] + '"\n')
+        writeLine('\t\tself.ammo="' + fileJSON['ammo'] + '"\n')
+        writeLine('\t\tself.damage="' + fileJSON['damage'] + '"\n')
+        writeLine('\t\tself.effects=' + fileJSON['effects'] + '\n')
+        writeLine('\n')
+        writeLine('\tdef use(self):\n')
+        writeLine('\t\tprint("used item")\n')
+        writeLine('\n')
+        writeLine('\tdef addEffect(self):\n')
+        writeLine('\t\tprint("used item")\n')
     elif fileJSON["type"] == 'environment':
         print("environment type")
         writeLine('\t\tself.destructable="' + fileJSON['destructable'] + '"\n')
-        writeLine('\t\tself.items="' + fileJSON['contains'] + '"\n')
+        writeLine('\t\tself.items=[' + ', '.join(fileJSON['items']) + ']\n')
         writeLine('\t\tself.cover=' + fileJSON['cover'] + '\n')
         writeLine('\n')
         writeLine('\tdef equipItem(self, item):\n')

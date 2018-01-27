@@ -3,8 +3,9 @@
     "subtype"      : "weapon",
     "name"         : "Basic Laser Pistol",
     "imagePath"    : "./art/meow.png",
-    "weapon-type"  : "ranged",
+    "weaponType"   : "ranged",
+    "effects"      : "[]",
     "consumable"   : "0",
-    "ammo"         : "6",
+    "ammo"         : "-1",
     "damage"       : "1"
 }
