@@ -56,8 +56,8 @@ print(sys.modules.keys())
 rect = screen.get_rect()
 
 blonic  = modules["player"][0].objectClass()
-
-
+gun = modules["weapon"][0].objectClass()
+blonic.activeItem=gun
 
 
 blonic_group = pygame.sprite.RenderPlain(blonic)
@@ -82,7 +82,7 @@ while 1:
         for event in pygame.event.get():
 
                 if event.type == pygame.MOUSEBUTTONDOWN:
-                    print ("done")
+                    blonic.useActiveItem()
 
 
                 if event.type == 12:
