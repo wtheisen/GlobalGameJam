@@ -61,6 +61,8 @@ def createClass(filePath, fileJSON):
         writeLine('        self.x += self.speed * xDir\n')
         writeLine('        self.y += self.speed * yDir\n')
         writeLine('        self.position = (self.x, self.y)\n')
+        writeLine('        self.rect.center = self.position\n')
+
 
         writeLine('\n')
         writeLine('    def useActiveItem(self):\n')

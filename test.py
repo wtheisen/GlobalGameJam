@@ -103,9 +103,6 @@ while 1:
 
                 print (event)
         screen.fill((0,0,0))
-        keypressed = pygame.key.get_pressed()
-        if keypressed[pygame.K_ESCAPE]:
-                print (keypressed)
 
         i+=1
         x=0
@@ -115,7 +112,6 @@ while 1:
         #blonic_group.update(deltat)
         blonic_group.draw(screen)
         
-        print(blonic.position)
             
         pygame.display.flip()
 
