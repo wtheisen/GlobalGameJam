@@ -38,8 +38,8 @@ def checkPointCol(x, y, sceneObjects):
                     obj.health -= 1
                     print ("hit enemy")
                     return True
-                else:
-                    return True
+                #else:
+                #    return True
 
     return False
 

@@ -60,10 +60,12 @@ rect = screen.get_rect()
 blonic  = modules["player"][0].objectClass()
 gun = modules["weapon"][0].objectClass()
 enemy = modules["enemy"][0].objectClass()
+wall = modules["wall"][0].objectClass()
 
 sceneObjects["player"].append(blonic)
 sceneObjects["weapon"].append(gun)
 sceneObjects["enemy"].append(enemy)
+sceneObjects["wall"].append(wall)
 
 gun.screen=screen
 blonic.activeItem=gun
@@ -72,6 +74,7 @@ blonic.activeItem=gun
 
 
 enemy_group = pygame.sprite.RenderPlain(enemy)
+wall_group = pygame.sprite.RenderPlain(wall)
 blonic_group = pygame.sprite.RenderPlain(blonic)
 
 
@@ -101,7 +104,7 @@ while 1:
                 if event.type == 12:
                         sys.exit(0)
 
-                print (event)
+                # print (event)
 
 
 #        screen.fill((0,0,0))
@@ -113,6 +116,7 @@ while 1:
         ##screen.blit(rotated ,(i, 100))
         #blonic_group.update(deltat)
         blonic_group.draw(screen)
+        wall_group.draw(screen)
         for obj in sceneObjects["enemy"]:
             if obj.health > 0:
                 enemy_group.draw(screen)

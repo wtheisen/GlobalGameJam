@@ -5,7 +5,7 @@
     "imagePath"    : "./art/wall.png",
     "objectID"     : "0",
     "instanceID"   : "0",
-    "destructable" : "true",
+    "destructable" : "True",
     "items"        : ["credits"],
     "health"       : "5",
     "cover"        : "1"
