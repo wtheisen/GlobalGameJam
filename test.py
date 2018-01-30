@@ -2,7 +2,7 @@ import pygame,math,sys
 from pygame.locals import *
 from collections import defaultdict
 
-import utils
+import utils, levelParser
 
 print("hello")
 
@@ -28,28 +28,28 @@ TURN_SPEED = 5
 
 i=0
 
+levelParser.createLevelArray(modules)
+
+# class PlayerSprite(pygame.sprite.Sprite):
+#         MAX_FORWARD_SPEED = 10
+#         MAX_REVERSE_SPEED = 10
+#         ACCERATION = 2
+#         TURN_SPEED = 5
+
+#         def __init__(self, image, position):
+#                 pygame.sprite.Sprite.__init__(self)
+#                 self.src_image = pygame.image.load(image)
+#                 self.position = position
+#                 self.speed = self.direction = 0
 
 
-class PlayerSprite(pygame.sprite.Sprite):
-        MAX_FORWARD_SPEED = 10
-        MAX_REVERSE_SPEED = 10
-        ACCERATION = 2
-        TURN_SPEED = 5
 
-        def __init__(self, image, position):
-                pygame.sprite.Sprite.__init__(self)
-                self.src_image = pygame.image.load(image)
-                self.position = position
-                self.speed = self.direction = 0
-
-
-
-        def update(self, deltat):
-                x, y = self.position
-                self.position = (x, y)
-                self.image = pygame.transform.rotate(self.src_image, self.direction)
-                self.rect=self.image.get_rect()
-                self.rect.center = self.position
+#         def update(self, deltat):
+#                 x, y = self.position
+#                 self.position = (x, y)
+#                 self.image = pygame.transform.rotate(self.src_image, self.direction)
+#                 self.rect=self.image.get_rect()
+#                 self.rect.center = self.position
 
 
 print ("current imports\n")
@@ -69,9 +69,6 @@ sceneObjects["wall"].append(wall)
 
 gun.screen=screen
 blonic.activeItem=gun
-
-
-
 
 enemy_group = pygame.sprite.RenderPlain(enemy)
 wall_group = pygame.sprite.RenderPlain(wall)

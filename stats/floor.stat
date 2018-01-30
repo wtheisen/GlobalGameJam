@@ -1,0 +1,12 @@
+{
+    "type"         : "environment",
+    "subtype"      : "floor",
+    "name"         : "floor",
+    "imagePath"    : "./art/wall.png",
+    "objectID"     : "0",
+    "instanceID"   : "0",
+    "destructable" : "False",
+    "items"        : [],
+    "health"       : "-1",
+    "cover"        : "0"
+}
