@@ -19,7 +19,18 @@ def createLevelArray(moduleList):
 
 
 def createLevelSpriteGroup(lvlArray, moduleList):
-    print(lvlArray)
-    return 'meow'
+    # print(lvlArray)
+    # print(moduleList)
+    objectList = []
+
+    for row in lvlArray:
+        for col in row:
+            for module in moduleList:
+                if module.getName() == col:
+                    objectList.append(module.objectClass())
+                    continue
+
+    print(objectList)
+    return objectList
 
 
